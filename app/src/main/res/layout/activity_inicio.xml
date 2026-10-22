@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050A18">
+
+    <!-- Header User Info -->
+    <TextView
+        android:id="@+id/lblWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        android:text="BIENVENIDO"
+        android:textColor="#88FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MARLYON BENAVIDES"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/lblWelcome"
+        app:layout_constraintTop_toBottomOf="@id/lblWelcome" />
+
+    <!-- Profile Image -->
+
+    <!-- Search Bar -->
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="77dp"
+        android:layout_height="81dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/userName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/userName"
+        app:layout_constraintVertical_bias="0.578"
+        app:srcCompat="@drawable/hombre" />
+
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text_bg"
+        android:backgroundTint="#121829"
+        android:hint="Buscar entrenamientos o productos..."
+        android:paddingStart="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#44FFFFFF"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userName" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintTop_toBottomOf="@id/searchBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <!-- Premium Banner -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="25dp"
+                app:cardBackgroundColor="#1B65FF"
+                app:cardCornerRadius="25dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/lblPremium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SUSCRIPCIÓN PREMIUM"
+                        android:textColor="#CCFFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/titlePremium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lblPremium"
+                        android:layout_marginTop="8dp"
+                        android:text="MENSUALIDAD\n$80.000 COP"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSubscribe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/titlePremium"
+                        android:layout_marginTop="16dp"
+                        android:text="SUSCRIBIRME"
+                        android:textColor="#1B65FF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="#FFFFFF"
+                        app:cornerRadius="15dp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Sección PARA TI -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:id="@+id/lblParaTi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PARA TI"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="VER TODO"
+                    android:textColor="#1B65FF"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <!-- Item de Blog/Entrenamiento -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardNutricion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="#F5F5F5"
+                app:cardCornerRadius="25dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="¿CÓMO CAMBIAR DE MALOS HÁBITOS ALIMENTICIOS?"
+                        android:textColor="#050A18"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/buenos_habitos_alimenticios_importancia" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Barra de Navegación Inferior -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#E91E1E"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_home"
+                android:contentDescription="Inicio"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EXPLORAR"
+                android:textColor="#FFFF00"
+                android:textSize="10sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_calendar"
+                android:alpha="0.6"
+                android:contentDescription="Horario"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HORARIO"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_heart"
+                android:alpha="0.6"
+                android:contentDescription="Favoritos"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FAVORITOS"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_profile"
+                android:alpha="0.6"
+                android:contentDescription="Perfil"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PERFIL"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

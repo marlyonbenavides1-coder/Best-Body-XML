@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050A18"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- 1. Botón Atrás -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_circle_border"
+            android:contentDescription="Atrás"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- 2. Título -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CREA TU CUENTA"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/btnBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 3. Foto de Perfil -->
+        <FrameLayout
+            android:id="@+id/profileContainer"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.3"
+                android:contentDescription="Foto de perfil"
+                android:src="@drawable/ic_profile"
+                app:tint="#FFFFFF" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom|end"
+                android:background="@drawable/bg_circle_border"
+                android:backgroundTint="#1B65FF"
+                android:contentDescription="Cámara"
+                android:padding="8dp"
+                android:src="@android:drawable/ic_menu_camera"
+                app:tint="#FFFFFF" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/lblPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FOTO DE PERFIL"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/profileContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <!-- 4. Nombres y Apellidos -->
+        <TextView
+            android:id="@+id/lblNombres"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="NOMBRES"
+            android:textColor="#1B65FF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/lblPhoto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/lblApellidos"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="10dp"/>
+
+        <TextView
+            android:id="@+id/lblApellidos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="APELLIDOS"
+            android:textColor="#FF1B1B"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@id/lblNombres"
+            app:layout_constraintStart_toEndOf="@id/lblNombres"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="10dp"/>
+
+        <EditText
+            android:id="@+id/etNombres"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="Ej: Marlyon Steve"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#44FFFFFF"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:inputType="textPersonName"
+            app:layout_constraintTop_toBottomOf="@id/lblNombres"
+            app:layout_constraintStart_toStartOf="@id/lblNombres"
+            app:layout_constraintEnd_toEndOf="@id/lblNombres"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etApellidos"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="Ej: Benavides"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#44FFFFFF"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:inputType="textPersonName"
+            app:layout_constraintTop_toBottomOf="@id/lblApellidos"
+            app:layout_constraintStart_toStartOf="@id/lblApellidos"
+            app:layout_constraintEnd_toEndOf="@id/lblApellidos"
+            android:layout_marginTop="8dp"/>
+
+        <!-- 5. Cédula y Fecha -->
+        <TextView
+            android:id="@+id/lblCedula"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="CÉDULA"
+            android:textColor="#00FF00"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/etNombres"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/lblFecha"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"/>
+
+        <TextView
+            android:id="@+id/lblFecha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="F. NACIMIENTO"
+            android:textColor="#1B65FF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@id/lblCedula"
+            app:layout_constraintStart_toEndOf="@id/lblCedula"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="10dp"/>
+
+        <EditText
+            android:id="@+id/etCedula"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="1085..."
+            android:textColor="#FFFFFF"
+            android:textColorHint="#44FFFFFF"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/lblCedula"
+            app:layout_constraintStart_toStartOf="@id/lblCedula"
+            app:layout_constraintEnd_toEndOf="@id/lblCedula"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etFecha"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="DD/MM/AAAA"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#44FFFFFF"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:inputType="date"
+            app:layout_constraintTop_toBottomOf="@id/lblFecha"
+            app:layout_constraintStart_toStartOf="@id/lblFecha"
+            app:layout_constraintEnd_toEndOf="@id/lblFecha"
+            android:layout_marginTop="8dp"/>
+
+        <!-- 6. Nombre de Usuario -->
+        <TextView
+            android:id="@+id/lblUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NOMBRE DE USUARIO"
+            android:textColor="#1B65FF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/etCedula"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/etUser"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="marlyon1"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#44FFFFFF"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/lblUser"
+            android:layout_marginTop="8dp"/>
+
+        <!-- 7. Altura y Peso -->
+        <TextView
+            android:id="@+id/lblAltura"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="ALTURA"
+            android:textColor="#1B65FF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/etUser"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/lblPeso"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/lblPeso"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="PESO"
+            android:textColor="#FF1B1B"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@id/lblAltura"
+            app:layout_constraintStart_toEndOf="@id/lblAltura"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="10dp"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/etAltura"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="1.90"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#44FFFFFF"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toBottomOf="@id/lblAltura"
+            app:layout_constraintStart_toStartOf="@id/lblAltura"
+            app:layout_constraintEnd_toEndOf="@id/lblAltura"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etPeso"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="70"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#44FFFFFF"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toBottomOf="@id/lblPeso"
+            app:layout_constraintStart_toStartOf="@id/lblPeso"
+            app:layout_constraintEnd_toEndOf="@id/lblPeso"
+            android:layout_marginTop="8dp"/>
+
+        <!-- 8. Botón Final -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"
+            android:text="REGISTRARSE"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:backgroundTint="#1B65FF"
+            app:cornerRadius="15dp"
+            app:layout_constraintTop_toBottomOf="@id/etAltura"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

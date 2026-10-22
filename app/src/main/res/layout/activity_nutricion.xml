@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+    <!-- Header -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_circle_border"
+        android:src="@drawable/ic_arrow_back"
+        android:scaleType="centerInside"
+        android:padding="10dp"
+        android:contentDescription="Atrás"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="20dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="¿Cómo cambiar de malos habitos alimenti..."
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnBack"
+        app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintTop_toBottomOf="@id/btnBack">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¿Cómo cambiar de malos\nhabitos alimenticios?"
+                android:textColor="#1B65FF"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="25dp"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/alim"
+                    android:contentDescription="Imagen de comida" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:lineSpacingExtra="6dp"
+                android:text="Paso 1: no te dejes llevar por la culpa de los excesos de estos días. Lo pasado, pasado está. Lo importante es lo que construyas cada día a partir de hoy. Nada de miradas hacia atrás, siempre hacia delante.\n\nPaso 2: márcate pequeños objetivos. No sirve de nada intentar ser la persona más perfeccionista del mundo: hacer una dieta perfecta, un plan de ejercicios perfecto, una mirada introspectiva perfecta... Tienes que adaptar los cambios a ti, si no te durará tu plan 2 días.\n\nPaso 3: Cambia un hábito a la vez Intentar cambiar todo al mismo tiempo suele generar frustración."
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Nav -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#E91E1E"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:alpha="0.6"
+                android:src="@drawable/ic_home"
+                app:tint="#FFFFFF"
+                android:contentDescription="Explorar" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EXPLORAR"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:alpha="0.6"
+                android:src="@drawable/ic_calendar"
+                app:tint="#FFFFFF"
+                android:contentDescription="Horario" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HORARIO"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:alpha="0.6"
+                android:src="@drawable/ic_heart"
+                app:tint="#FFFFFF"
+                android:contentDescription="Favoritos" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FAVORITOS"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:alpha="0.6"
+                android:src="@drawable/ic_profile"
+                app:tint="#FFFFFF"
+                android:contentDescription="Perfil" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PERFIL"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

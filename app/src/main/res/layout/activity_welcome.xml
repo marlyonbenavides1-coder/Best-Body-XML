@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050A18">
+
+    <!-- Logo Circular Central -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="286dp"
+        android:layout_height="254dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <!-- Slogan con líneas decorativas agrupadas -->
+    <LinearLayout
+        android:id="@+id/sloganContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView2">
+
+        <View
+            android:layout_width="35dp"
+            android:layout_height="2dp"
+            android:layout_marginEnd="12dp"
+            android:background="#1B65FF" />
+
+        <TextView
+            android:id="@+id/slogan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="SALUD ES VIDA,\nENTRENA POR TI DE\nMANERA PLENA"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="35dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="12dp"
+            android:background="#FF1B1B" />
+    </LinearLayout>
+
+    <!-- Botón Empezar Ahora -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStart"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="35dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#1B65FF"
+        android:text="EMPEZAR AHORA"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sloganContainer" />
+
+    <!-- Botón Registrarse -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStart2"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="35dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#1B65FF"
+        android:text="REGISTRAR"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnStart" />
+
+    <!-- Footer Copyright -->
+    <TextView
+        android:id="@+id/copyright"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:text="COPYRIGHT © 2026 BEST BODY. TODOS LOS DERECHOS RESERVADOS."
+        android:textColor="#66FFFFFF"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toTopOf="@+id/demoLink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Enlace Demo -->
+    <TextView
+        android:id="@+id/demoLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="[ VER PANTALLA DE ERROR (DEMO) ]"
+        android:textColor="#D32F2F"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
